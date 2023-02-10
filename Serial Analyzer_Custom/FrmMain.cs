@@ -1,4 +1,7 @@
-﻿using System;
+﻿#define SIMUL
+//#define REAL
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +15,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Serial_Analyzer_Custom
 {
@@ -49,21 +53,24 @@ namespace Serial_Analyzer_Custom
             */
 
 
+
             // 세팅
+#if SIMUL
             // 가상장비
-            /*
+
             txtIP_1.Text = "192";
             txtIP_2.Text = "168";
             txtIP_3.Text = "192";
             txtIP_4.Text = "250";
-            */
-
+            
+#elif REAL
             // 실제장비
             
             txtIP_1.Text = "192";
             txtIP_2.Text = "168";
             txtIP_3.Text = "0";
             txtIP_4.Text = "200";
+#endif          
             
             txtPort.Text = "2000";
 
@@ -93,29 +100,6 @@ namespace Serial_Analyzer_Custom
                 grbEthernet.Enabled = true;
                 grbSerial.Enabled = false;
             }
-        }
-
-        /// <summary>
-        /// 내용 작성 필요
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnChecksumCal_Click(object sender, EventArgs e)
-        {
-            byte[] byteChecksumStr = ConvertHexStringToByte(rtxtChecksumStr.Text);
-            byte byteChecksum      = CalCheckSum(byteChecksumStr, byteChecksumStr.Length);
-
-            txtChecksum.Text       = byteChecksum.ToString("X");
-        }
-
-        /// <summary>
-        /// [보낼 데이터, 복사] 버튼 클릭
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnSendCopy_Click(object sender, EventArgs e)
-        {
-            txtSend.Text = rtxtChecksumStr.Text + txtChecksum.Text;
         }
 
         private void btnConn_Click(object sender, EventArgs e)
@@ -173,11 +157,34 @@ namespace Serial_Analyzer_Custom
 
         }
 
+        /// <summary>
+        /// 내용 작성 필요
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnChecksumCal_Click(object sender, EventArgs e)
+        {
+            byte[] byteChecksumStr = ConvertHexStringToByte(rtxtChecksumStr.Text);
+            byte byteChecksum      = CalCheckSum(byteChecksumStr, byteChecksumStr.Length);
+
+            txtChecksum.Text       = byteChecksum.ToString("X");
+        }
+
+        /// <summary>
+        /// [보낼 데이터, 복사] 버튼 클릭
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSendCopy_Click(object sender, EventArgs e)
+        {
+            txtSend.Text = rtxtChecksumStr.Text + txtChecksum.Text;
+        }
+
         private void connect()
         {
             try
             {
-                string strIP = txtIP_1.Text + "." + txtIP_2.Text + "." + txtIP_3.Text + "." + txtIP_4.Text;
+                string strIP   = txtIP_1.Text + "." + txtIP_2.Text + "." + txtIP_3.Text + "." + txtIP_4.Text;
                 string strPort = txtPort.Text;
 
                 tcpClient = new TcpClient();
@@ -268,6 +275,8 @@ namespace Serial_Analyzer_Custom
                         isSendAutoChk = true;
 
                         WriteMessage(txtAutoAck.Text);
+
+                        AppendRtxSendHex(txtAutoAck.Text);
                     }
 
                     tcpc = (TcpClient)iar.AsyncState;
@@ -289,7 +298,7 @@ namespace Serial_Analyzer_Custom
                     Array.Copy(mRx, 0, tRx, 0, nCountBytesReceivedFromServer);
 
                     //writeRichTextbox(rtxtRecvHex, ByteToHex(StringToByte(strReceived)));
-                    writeRichTextbox(rtxtRecvHex, ByteToHex(tRx));
+                    writeRichTextbox(rtxtRecvHex, ConvertHexFormat(ByteToHex(tRx)));
                     writeRichTextbox(rtxtRecvAscii, strReceived);
 
                     
@@ -331,13 +340,19 @@ namespace Serial_Analyzer_Custom
 
             WriteMessage(txtSend.Text);
 
+            AppendRtxSendHex(txtSend.Text);
+
+            /*
             if (rtxtSendHex.Text.Length > 0)
             {
                 rtxtSendHex.AppendText("\n");
             }
 
-            rtxtSendHex.AppendText(txtSend.Text);
+            rtxtSendHex.AppendText(ConvertHexFormat(txtSend.Text));
+            */
         }
+
+        
 
         private void btnProtocolClear_Click(object sender, EventArgs e)
         {
@@ -398,6 +413,30 @@ namespace Serial_Analyzer_Custom
             }
 
             //throw new NotImplementedException();
+        }
+
+        private void AppendRtxSendHex(string msg)
+        {
+            /*
+            if (rtxtSendHex.Text.Length > 0)
+            {
+                //rtxtSendHex.AppendText("\n");
+                rtxtSendHex.Invoke((MethodInvoker)delegate { rtxtSendHex.AppendText("\n"); });
+            }
+
+            //rtxtSendHex.AppendText(ConvertHexFormat(msg));
+            rtxtSendHex.Invoke((MethodInvoker)delegate { rtxtSendHex.AppendText(ConvertHexFormat(msg)); });
+            */
+
+            rtxtSendHex.Invoke((MethodInvoker)delegate
+            {
+                if (rtxtSendHex.Text.Length > 0)
+                {
+                    rtxtSendHex.AppendText("\n");
+                }
+
+                rtxtSendHex.AppendText(ConvertHexFormat(msg));
+            });
         }
 
         /// <summary>
@@ -508,6 +547,39 @@ namespace Serial_Analyzer_Custom
             checksum = 256 - checksum;
             checksum &= 0xFF; // FFFFFF replace
             return checksum.ToString("X2");
+        }
+
+        public string ConvertHexFormat(string msg)
+        {
+            string res = string.Empty;
+
+            for (int i = 0; i < msg.Length; i++)
+            {
+                res += msg.Substring(i, 1);
+
+                /*
+                if (i != 0 && i / 2 == 1)
+                {
+                    res += " ";
+                }
+                */
+
+                if (i % 2 == 0 && i != 0)   // 짝수
+                {
+
+                }
+                else if (i % 2 == 1)        // 홀수
+                {
+                    res += " ";
+                }
+                else                        // 0
+                {
+
+                }
+                        
+            }
+
+            return res;
         }
     }
 }
