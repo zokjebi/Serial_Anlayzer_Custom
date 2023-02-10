@@ -560,13 +560,6 @@ namespace Serial_Analyzer_Custom
             {
                 res += msg.Substring(i, 1);
 
-                /*
-                if (i != 0 && i / 2 == 1)
-                {
-                    res += " ";
-                }
-                */
-
                 if (i % 2 == 0 && i != 0)   // 짝수
                 {
 
@@ -583,6 +576,14 @@ namespace Serial_Analyzer_Custom
             }
 
             return res;
+        }
+
+        private void txtSend_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.C)
+            {
+                Clipboard.SetText(txtSend.Text.Replace(" ", ""));
+            }
         }
     }
 }

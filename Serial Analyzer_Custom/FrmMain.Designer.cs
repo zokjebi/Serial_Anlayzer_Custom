@@ -411,6 +411,7 @@ namespace Serial_Analyzer_Custom
             this.txtSend.Name = "txtSend";
             this.txtSend.Size = new System.Drawing.Size(407, 52);
             this.txtSend.TabIndex = 18;
+            this.txtSend.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSend_KeyDown);
             // 
             // label13
             // 
