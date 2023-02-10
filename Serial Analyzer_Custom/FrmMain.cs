@@ -1,5 +1,5 @@
-﻿#define SIMUL
-//#define REAL
+﻿//#define SIMUL
+#define REAL
 
 using System;
 using System.Collections.Generic;
@@ -77,6 +77,9 @@ namespace Serial_Analyzer_Custom
             txtAutoAck.Text = "06";
 
             btnDisconn.Enabled = false;
+
+            //rdoBtnEthernet_CheckedChanged(this, null);
+            rdoBtnEthernet.Checked = true;
         }
 
         private void rdoBtnSerial_CheckedChanged(object sender, EventArgs e)
@@ -164,7 +167,7 @@ namespace Serial_Analyzer_Custom
         /// <param name="e"></param>
         private void btnChecksumCal_Click(object sender, EventArgs e)
         {
-            byte[] byteChecksumStr = ConvertHexStringToByte(rtxtChecksumStr.Text);
+            byte[] byteChecksumStr = ConvertHexStringToByte(rtxtChecksumStr.Text.Replace(" ", ""));
             byte byteChecksum      = CalCheckSum(byteChecksumStr, byteChecksumStr.Length);
 
             txtChecksum.Text       = byteChecksum.ToString("X");
@@ -177,7 +180,7 @@ namespace Serial_Analyzer_Custom
         /// <param name="e"></param>
         private void btnSendCopy_Click(object sender, EventArgs e)
         {
-            txtSend.Text = rtxtChecksumStr.Text + txtChecksum.Text;
+            txtSend.Text = rtxtChecksumStr.Text + " " + txtChecksum.Text;
         }
 
         private void connect()
@@ -338,9 +341,9 @@ namespace Serial_Analyzer_Custom
         {
             isSendAutoChk = false;
 
-            WriteMessage(txtSend.Text);
+            WriteMessage(txtSend.Text.Replace(" ", ""));
 
-            AppendRtxSendHex(txtSend.Text);
+            AppendRtxSendHex(txtSend.Text.Replace(" ", ""));
 
             /*
             if (rtxtSendHex.Text.Length > 0)

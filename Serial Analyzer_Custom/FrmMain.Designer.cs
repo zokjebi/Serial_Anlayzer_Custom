@@ -113,7 +113,7 @@ namespace Serial_Analyzer_Custom
             this.comboBox5.Location = new System.Drawing.Point(222, 74);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(82, 20);
-            this.comboBox5.TabIndex = 10;
+            this.comboBox5.TabIndex = 9;
             // 
             // comboBox3
             // 
@@ -121,7 +121,7 @@ namespace Serial_Analyzer_Custom
             this.comboBox3.Location = new System.Drawing.Point(222, 48);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(82, 20);
-            this.comboBox3.TabIndex = 8;
+            this.comboBox3.TabIndex = 7;
             // 
             // comboBox4
             // 
@@ -129,7 +129,7 @@ namespace Serial_Analyzer_Custom
             this.comboBox4.Location = new System.Drawing.Point(222, 23);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(82, 20);
-            this.comboBox4.TabIndex = 6;
+            this.comboBox4.TabIndex = 5;
             // 
             // comboBox2
             // 
@@ -137,7 +137,7 @@ namespace Serial_Analyzer_Custom
             this.comboBox2.Location = new System.Drawing.Point(55, 48);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(82, 20);
-            this.comboBox2.TabIndex = 4;
+            this.comboBox2.TabIndex = 3;
             // 
             // comboBox1
             // 
@@ -145,7 +145,7 @@ namespace Serial_Analyzer_Custom
             this.comboBox1.Location = new System.Drawing.Point(55, 23);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(82, 20);
-            this.comboBox1.TabIndex = 2;
+            this.comboBox1.TabIndex = 1;
             // 
             // label12
             // 
@@ -153,7 +153,7 @@ namespace Serial_Analyzer_Custom
             this.label12.Location = new System.Drawing.Point(143, 75);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(73, 12);
-            this.label12.TabIndex = 9;
+            this.label12.TabIndex = 8;
             this.label12.Text = "페러티비트 :";
             // 
             // label11
@@ -162,7 +162,7 @@ namespace Serial_Analyzer_Custom
             this.label11.Location = new System.Drawing.Point(143, 51);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(73, 12);
-            this.label11.TabIndex = 7;
+            this.label11.TabIndex = 6;
             this.label11.Text = "데이터크기 :";
             // 
             // label10
@@ -171,7 +171,7 @@ namespace Serial_Analyzer_Custom
             this.label10.Location = new System.Drawing.Point(155, 27);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(61, 12);
-            this.label10.TabIndex = 5;
+            this.label10.TabIndex = 4;
             this.label10.Text = "정지비트 :";
             // 
             // label9
@@ -180,7 +180,7 @@ namespace Serial_Analyzer_Custom
             this.label9.Location = new System.Drawing.Point(12, 51);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(37, 12);
-            this.label9.TabIndex = 3;
+            this.label9.TabIndex = 2;
             this.label9.Text = "속도 :";
             // 
             // label8
@@ -189,16 +189,17 @@ namespace Serial_Analyzer_Custom
             this.label8.Location = new System.Drawing.Point(12, 27);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(37, 12);
-            this.label8.TabIndex = 1;
+            this.label8.TabIndex = 0;
             this.label8.Text = "포트 :";
             // 
             // rdoBtnSerial
             // 
             this.rdoBtnSerial.AutoSize = true;
+            this.rdoBtnSerial.Checked = true;
             this.rdoBtnSerial.Location = new System.Drawing.Point(26, 12);
             this.rdoBtnSerial.Name = "rdoBtnSerial";
             this.rdoBtnSerial.Size = new System.Drawing.Size(55, 16);
-            this.rdoBtnSerial.TabIndex = 0;
+            this.rdoBtnSerial.TabIndex = 1;
             this.rdoBtnSerial.TabStop = true;
             this.rdoBtnSerial.Text = "Serial";
             this.rdoBtnSerial.UseVisualStyleBackColor = true;
@@ -216,10 +217,11 @@ namespace Serial_Analyzer_Custom
             this.grbEthernet.Controls.Add(this.txtIP_2);
             this.grbEthernet.Controls.Add(this.txtIP_1);
             this.grbEthernet.Controls.Add(this.label3);
+            this.grbEthernet.Enabled = false;
             this.grbEthernet.Location = new System.Drawing.Point(12, 161);
             this.grbEthernet.Name = "grbEthernet";
             this.grbEthernet.Size = new System.Drawing.Size(316, 53);
-            this.grbEthernet.TabIndex = 1;
+            this.grbEthernet.TabIndex = 6;
             this.grbEthernet.TabStop = false;
             // 
             // label7
@@ -228,7 +230,7 @@ namespace Serial_Analyzer_Custom
             this.label7.Location = new System.Drawing.Point(156, 26);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(9, 12);
-            this.label7.TabIndex = 7;
+            this.label7.TabIndex = 6;
             this.label7.Text = ".";
             // 
             // label6
@@ -237,7 +239,7 @@ namespace Serial_Analyzer_Custom
             this.label6.Location = new System.Drawing.Point(115, 27);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(9, 12);
-            this.label6.TabIndex = 5;
+            this.label6.TabIndex = 4;
             this.label6.Text = ".";
             // 
             // label5
@@ -246,7 +248,7 @@ namespace Serial_Analyzer_Custom
             this.label5.Location = new System.Drawing.Point(74, 28);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(9, 12);
-            this.label5.TabIndex = 3;
+            this.label5.TabIndex = 2;
             this.label5.Text = ".";
             // 
             // txtPort
@@ -254,7 +256,7 @@ namespace Serial_Analyzer_Custom
             this.txtPort.Location = new System.Drawing.Point(245, 21);
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(45, 21);
-            this.txtPort.TabIndex = 10;
+            this.txtPort.TabIndex = 9;
             this.txtPort.Text = "65535";
             // 
             // label4
@@ -263,7 +265,7 @@ namespace Serial_Analyzer_Custom
             this.label4.Location = new System.Drawing.Point(206, 26);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 12);
-            this.label4.TabIndex = 9;
+            this.label4.TabIndex = 8;
             this.label4.Text = "Port :";
             // 
             // txtIP_4
@@ -271,7 +273,7 @@ namespace Serial_Analyzer_Custom
             this.txtIP_4.Location = new System.Drawing.Point(166, 21);
             this.txtIP_4.Name = "txtIP_4";
             this.txtIP_4.Size = new System.Drawing.Size(30, 21);
-            this.txtIP_4.TabIndex = 8;
+            this.txtIP_4.TabIndex = 7;
             this.txtIP_4.Text = "255";
             // 
             // txtIP_3
@@ -279,7 +281,7 @@ namespace Serial_Analyzer_Custom
             this.txtIP_3.Location = new System.Drawing.Point(124, 21);
             this.txtIP_3.Name = "txtIP_3";
             this.txtIP_3.Size = new System.Drawing.Size(30, 21);
-            this.txtIP_3.TabIndex = 6;
+            this.txtIP_3.TabIndex = 5;
             this.txtIP_3.Text = "255";
             // 
             // txtIP_2
@@ -287,7 +289,7 @@ namespace Serial_Analyzer_Custom
             this.txtIP_2.Location = new System.Drawing.Point(84, 21);
             this.txtIP_2.Name = "txtIP_2";
             this.txtIP_2.Size = new System.Drawing.Size(30, 21);
-            this.txtIP_2.TabIndex = 4;
+            this.txtIP_2.TabIndex = 3;
             this.txtIP_2.Text = "255";
             // 
             // txtIP_1
@@ -295,7 +297,7 @@ namespace Serial_Analyzer_Custom
             this.txtIP_1.Location = new System.Drawing.Point(41, 21);
             this.txtIP_1.Name = "txtIP_1";
             this.txtIP_1.Size = new System.Drawing.Size(30, 21);
-            this.txtIP_1.TabIndex = 2;
+            this.txtIP_1.TabIndex = 1;
             this.txtIP_1.Text = "255";
             // 
             // label3
@@ -304,7 +306,7 @@ namespace Serial_Analyzer_Custom
             this.label3.Location = new System.Drawing.Point(12, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(24, 12);
-            this.label3.TabIndex = 1;
+            this.label3.TabIndex = 0;
             this.label3.Text = "IP :";
             // 
             // rdoBtnEthernet
@@ -313,8 +315,7 @@ namespace Serial_Analyzer_Custom
             this.rdoBtnEthernet.Location = new System.Drawing.Point(25, 162);
             this.rdoBtnEthernet.Name = "rdoBtnEthernet";
             this.rdoBtnEthernet.Size = new System.Drawing.Size(69, 16);
-            this.rdoBtnEthernet.TabIndex = 0;
-            this.rdoBtnEthernet.TabStop = true;
+            this.rdoBtnEthernet.TabIndex = 7;
             this.rdoBtnEthernet.Text = "Ethernet";
             this.rdoBtnEthernet.UseVisualStyleBackColor = true;
             this.rdoBtnEthernet.CheckedChanged += new System.EventHandler(this.rdoBtnEthernet_CheckedChanged);
@@ -385,7 +386,7 @@ namespace Serial_Analyzer_Custom
             this.btnSendAscii.Location = new System.Drawing.Point(12, 371);
             this.btnSendAscii.Name = "btnSendAscii";
             this.btnSendAscii.Size = new System.Drawing.Size(75, 23);
-            this.btnSendAscii.TabIndex = 13;
+            this.btnSendAscii.TabIndex = 20;
             this.btnSendAscii.Text = "ASCII 전송";
             this.btnSendAscii.UseVisualStyleBackColor = true;
             this.btnSendAscii.Visible = false;
@@ -395,7 +396,7 @@ namespace Serial_Analyzer_Custom
             this.btnSendHex.Location = new System.Drawing.Point(12, 342);
             this.btnSendHex.Name = "btnSendHex";
             this.btnSendHex.Size = new System.Drawing.Size(75, 23);
-            this.btnSendHex.TabIndex = 12;
+            this.btnSendHex.TabIndex = 19;
             this.btnSendHex.Text = "HEX 전송";
             this.btnSendHex.UseVisualStyleBackColor = true;
             this.btnSendHex.Click += new System.EventHandler(this.btnSendHex_Click);
@@ -404,11 +405,12 @@ namespace Serial_Analyzer_Custom
             // 
             this.txtSend.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSend.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSend.Location = new System.Drawing.Point(96, 342);
             this.txtSend.Multiline = true;
             this.txtSend.Name = "txtSend";
             this.txtSend.Size = new System.Drawing.Size(407, 52);
-            this.txtSend.TabIndex = 14;
+            this.txtSend.TabIndex = 18;
             // 
             // label13
             // 
@@ -416,7 +418,7 @@ namespace Serial_Analyzer_Custom
             this.label13.Location = new System.Drawing.Point(13, 291);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(98, 12);
-            this.label13.TabIndex = 7;
+            this.label13.TabIndex = 12;
             this.label13.Text = "체크섬 (1 Byte) :";
             // 
             // rtxtRecvHex
@@ -424,10 +426,11 @@ namespace Serial_Analyzer_Custom
             this.rtxtRecvHex.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rtxtRecvHex.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtxtRecvHex.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rtxtRecvHex.Location = new System.Drawing.Point(96, 550);
             this.rtxtRecvHex.Name = "rtxtRecvHex";
             this.rtxtRecvHex.Size = new System.Drawing.Size(407, 105);
-            this.rtxtRecvHex.TabIndex = 16;
+            this.rtxtRecvHex.TabIndex = 24;
             this.rtxtRecvHex.Text = "";
             // 
             // rtxtRecvAscii
@@ -435,10 +438,11 @@ namespace Serial_Analyzer_Custom
             this.rtxtRecvAscii.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rtxtRecvAscii.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtxtRecvAscii.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rtxtRecvAscii.Location = new System.Drawing.Point(96, 694);
             this.rtxtRecvAscii.Name = "rtxtRecvAscii";
             this.rtxtRecvAscii.Size = new System.Drawing.Size(407, 105);
-            this.rtxtRecvAscii.TabIndex = 18;
+            this.rtxtRecvAscii.TabIndex = 26;
             this.rtxtRecvAscii.Text = "";
             // 
             // txtChecksum
@@ -446,7 +450,7 @@ namespace Serial_Analyzer_Custom
             this.txtChecksum.Location = new System.Drawing.Point(116, 287);
             this.txtChecksum.Name = "txtChecksum";
             this.txtChecksum.Size = new System.Drawing.Size(48, 21);
-            this.txtChecksum.TabIndex = 8;
+            this.txtChecksum.TabIndex = 13;
             // 
             // label14
             // 
@@ -454,7 +458,7 @@ namespace Serial_Analyzer_Custom
             this.label14.Location = new System.Drawing.Point(13, 316);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(77, 12);
-            this.label14.TabIndex = 11;
+            this.label14.TabIndex = 16;
             this.label14.Text = "보낼 데이터 :";
             // 
             // label15
@@ -463,7 +467,7 @@ namespace Serial_Analyzer_Custom
             this.label15.Location = new System.Drawing.Point(13, 530);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(105, 12);
-            this.label15.TabIndex = 15;
+            this.label15.TabIndex = 23;
             this.label15.Text = "받는 데이터 : HEX";
             // 
             // label16
@@ -472,7 +476,7 @@ namespace Serial_Analyzer_Custom
             this.label16.Location = new System.Drawing.Point(13, 673);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(112, 12);
-            this.label16.TabIndex = 17;
+            this.label16.TabIndex = 25;
             this.label16.Text = "받는 데이터 : ASCII";
             // 
             // chkAutoAck
@@ -501,7 +505,7 @@ namespace Serial_Analyzer_Custom
             this.grbAutoAck.Location = new System.Drawing.Point(338, 161);
             this.grbAutoAck.Name = "grbAutoAck";
             this.grbAutoAck.Size = new System.Drawing.Size(165, 53);
-            this.grbAutoAck.TabIndex = 6;
+            this.grbAutoAck.TabIndex = 8;
             this.grbAutoAck.TabStop = false;
             // 
             // btnSendCopy
@@ -509,7 +513,7 @@ namespace Serial_Analyzer_Custom
             this.btnSendCopy.Location = new System.Drawing.Point(251, 286);
             this.btnSendCopy.Name = "btnSendCopy";
             this.btnSendCopy.Size = new System.Drawing.Size(121, 23);
-            this.btnSendCopy.TabIndex = 9;
+            this.btnSendCopy.TabIndex = 15;
             this.btnSendCopy.Text = "보낼 데이터, 복사";
             this.btnSendCopy.UseVisualStyleBackColor = true;
             this.btnSendCopy.Click += new System.EventHandler(this.btnSendCopy_Click);
@@ -519,7 +523,7 @@ namespace Serial_Analyzer_Custom
             this.btnChecksumCal.Location = new System.Drawing.Point(171, 286);
             this.btnChecksumCal.Name = "btnChecksumCal";
             this.btnChecksumCal.Size = new System.Drawing.Size(75, 23);
-            this.btnChecksumCal.TabIndex = 19;
+            this.btnChecksumCal.TabIndex = 14;
             this.btnChecksumCal.Text = "계산";
             this.btnChecksumCal.UseVisualStyleBackColor = true;
             this.btnChecksumCal.Click += new System.EventHandler(this.btnChecksumCal_Click);
@@ -530,7 +534,7 @@ namespace Serial_Analyzer_Custom
             this.label17.Location = new System.Drawing.Point(13, 244);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(61, 12);
-            this.label17.TabIndex = 20;
+            this.label17.TabIndex = 9;
             this.label17.Text = "프로토콜 :";
             // 
             // rtxtChecksumStr
@@ -538,10 +542,11 @@ namespace Serial_Analyzer_Custom
             this.rtxtChecksumStr.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rtxtChecksumStr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtxtChecksumStr.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rtxtChecksumStr.Location = new System.Drawing.Point(96, 242);
             this.rtxtChecksumStr.Name = "rtxtChecksumStr";
             this.rtxtChecksumStr.Size = new System.Drawing.Size(407, 38);
-            this.rtxtChecksumStr.TabIndex = 21;
+            this.rtxtChecksumStr.TabIndex = 10;
             this.rtxtChecksumStr.Text = "";
             // 
             // btnClear
@@ -549,7 +554,7 @@ namespace Serial_Analyzer_Custom
             this.btnClear.Location = new System.Drawing.Point(414, 313);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(89, 23);
-            this.btnClear.TabIndex = 22;
+            this.btnClear.TabIndex = 17;
             this.btnClear.Text = "지우기";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -560,7 +565,7 @@ namespace Serial_Analyzer_Custom
             this.label18.Location = new System.Drawing.Point(13, 402);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(105, 12);
-            this.label18.TabIndex = 23;
+            this.label18.TabIndex = 21;
             this.label18.Text = "보낸 데이터 : HEX";
             // 
             // rtxtSendHex
@@ -568,10 +573,11 @@ namespace Serial_Analyzer_Custom
             this.rtxtSendHex.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rtxtSendHex.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtxtSendHex.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rtxtSendHex.Location = new System.Drawing.Point(96, 422);
             this.rtxtSendHex.Name = "rtxtSendHex";
             this.rtxtSendHex.Size = new System.Drawing.Size(407, 105);
-            this.rtxtSendHex.TabIndex = 24;
+            this.rtxtSendHex.TabIndex = 22;
             this.rtxtSendHex.Text = "";
             // 
             // btnProtocolClear
@@ -579,7 +585,7 @@ namespace Serial_Analyzer_Custom
             this.btnProtocolClear.Location = new System.Drawing.Point(414, 216);
             this.btnProtocolClear.Name = "btnProtocolClear";
             this.btnProtocolClear.Size = new System.Drawing.Size(89, 23);
-            this.btnProtocolClear.TabIndex = 25;
+            this.btnProtocolClear.TabIndex = 11;
             this.btnProtocolClear.Text = "지우기";
             this.btnProtocolClear.UseVisualStyleBackColor = true;
             this.btnProtocolClear.Click += new System.EventHandler(this.btnProtocolClear_Click);
