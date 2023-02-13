@@ -1,5 +1,5 @@
-﻿#define SIMUL
-//#define REAL
+﻿//#define SIMUL
+#define REAL
 
 using System;
 using System.Collections.Generic;
@@ -61,7 +61,7 @@ namespace Serial_Analyzer_Custom
             txtIP_1.Text = "192";
             txtIP_2.Text = "168";
             txtIP_3.Text = "192";
-            txtIP_4.Text = "250";
+            txtIP_4.Text = "200";
             
 #elif REAL
             // 실제장비
@@ -474,7 +474,8 @@ namespace Serial_Analyzer_Custom
         // 바이트 배열을 String 으로 변환 
         private string ByteToString(byte[] strByte)
         {
-            string str = Encoding.Default.GetString(strByte);
+            //string str = Encoding.Default.GetString(strByte);
+            string str = Encoding.ASCII.GetString(strByte).Replace("?", "").Replace("\0", "").Replace("\\u00", "");
             return str;
         }
 
