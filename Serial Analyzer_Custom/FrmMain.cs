@@ -1,5 +1,5 @@
-﻿//#define SIMUL
-#define REAL
+﻿#define SIMUL
+//#define REAL
 
 using System;
 using System.Collections.Generic;
@@ -302,9 +302,9 @@ namespace Serial_Analyzer_Custom
 
                     //writeRichTextbox(rtxtRecvHex, ByteToHex(StringToByte(strReceived)));
                     writeRichTextbox(rtxtRecvHex, ConvertHexFormat(ByteToHex(tRx)));
-                    writeRichTextbox(rtxtRecvAscii, strReceived);
+                    writeRichTextbox(rtxtRecvAscii, ByteToString(tRx));
 
-                    
+
                     mRx = new byte[1024];
                     tcpc.GetStream().BeginRead(mRx, 0, mRx.Length, onCompleteReadFromServerStream, tcpc);
                     
